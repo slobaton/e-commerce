@@ -6,6 +6,7 @@
 @endpush
 
 @section('content')
+<x-header icon="fas fa-users" title="Usuarios del sistema" />
 @php
 $columns = [
     [ 'title' => 'Nombre',                 'data' => 'name',       'name' => 'name' ],
