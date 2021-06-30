@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +21,19 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
+    ->name('home');
+
+Route::middleware(['auth'])
+    ->group(function () {
+        Route::resource(
+            'user',
+            UserController::class,
+            ['except' => ['create', 'edit']]
+        );
+        Route::get('user.list', [UserController::class, 'list'])
+            ->name('user.list');
+        Route::resource('user-permission', UserPermissionController::class);
+        Route::resource('user-role', UserRoleController::class);
+    });
+

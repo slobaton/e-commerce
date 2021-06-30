@@ -9,8 +9,16 @@ window._ = require('lodash');
 try {
     window.Popper = require('popper.js').default;
     window.$ = window.jQuery = require('jquery');
-
     require('bootstrap');
+
+    // Datatables
+    require('datatables.net-bs4');
+    require('datatables.net-select-bs4');
+    require('datatables.net-buttons-bs4');
+    require('jquery-ui/ui/widgets/resizable');
+    // Select2
+    require('select2');
+    require('select2/dist/js/i18n/es');
 } catch (e) {}
 
 /**
@@ -19,9 +27,9 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = require('axios');
+// window.axios = require('axios');
 
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+// window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
