@@ -1,10 +1,5 @@
 @extends('layouts.app')
 
-@push('css')
-{{-- <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet"> --}}
-{{-- <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet"> --}}
-@endpush
-
 @section('content')
 <x-header icon="fas fa-users" title="Usuarios del sistema" />
 @php

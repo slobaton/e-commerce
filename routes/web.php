@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -26,6 +27,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
 
 Route::middleware(['auth'])
     ->group(function () {
+        // USUARIOS
         Route::resource(
             'user',
             UserController::class,
@@ -35,5 +37,14 @@ Route::middleware(['auth'])
             ->name('user.list');
         Route::resource('user-permission', UserPermissionController::class);
         Route::resource('user-role', UserRoleController::class);
+
+        // ROLES
+        Route::resource(
+            'role',
+            RoleController::class,
+            ['except' => ['create', 'edit']]
+        );
+        Route::get('role.list', [RoleController::class, 'list'])->name('role.list');
+        Route::resource('role-permission', RolePermissionController::class);
     });
 

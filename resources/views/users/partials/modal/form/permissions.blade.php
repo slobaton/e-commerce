@@ -1,7 +1,7 @@
 <div class="form-group">
     <div class="row">
         @php
-        $permissionsType = get_permissionsType();
+        $permissionsType = [];//get_permissionsType();
         @endphp
         @foreach ($permissionsType as $permissionType)
             <div class="col-3">
