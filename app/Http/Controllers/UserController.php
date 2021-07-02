@@ -10,11 +10,9 @@ use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
 {
-    public function __construct() {
-        // $this->middleware('permission:view-user', ['only' => ['index', 'list']]);
-        // $this->middleware('permission:create-user', ['only' => ['store']]);
-        // $this->middleware('permission:edit-user', ['only' => ['show', 'update']]);
-        // $this->middleware('permission:delete-user', ['only' => ['destroy']]);
+    public function __construct()
+    {
+        $this->middleware('role:administrador');
     }
 
     public function index()
