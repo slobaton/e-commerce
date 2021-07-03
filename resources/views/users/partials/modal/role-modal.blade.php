@@ -1,5 +1,5 @@
 <form id="user-rol-crud-form">
-    {{-- <x-modal
+    <x-modal
         id="user-rol-crud-modal"
         backdrop="static"
         keyboard="false"
@@ -19,5 +19,5 @@
                 <i class="fas fa-share-square"></i> {{ __('Enviar') }}
             </button>
         </x-slot>
-    </x-modal> --}}
+    </x-modal>
 </form>

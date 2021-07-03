@@ -132,24 +132,9 @@
         },
         custom: {
             buttons: [{
-                text: 'Asignar Permisos',
-                icon: 'fas fa-plus-square',
-                className: 'btn btn-info btn-sm',
-                action: asignPermissionFn,
-                attr:  {
-                    id: 'asignPermissionBtn',
-                    disabled: true
-                },
-                tooltip: {
-                    placement: 'top',
-                    text: 'Asignar Permisos Al Usuario Seleccionado'
-                },
-                selection: 'selectedSingle',
-                hasPermission: @json(auth()->user()->can('assign-permission'))
-            }, {
                 text: 'Asignar Rol',
                 icon: 'fas fa-plus-square',
-                className: 'btn btn-info btn-sm',
+                className: 'btn btn-sm ml-2',
                 action: asignRoleFn,
                 attr:  {
                     id: 'asignRolBtn',
@@ -160,7 +145,7 @@
                     text: 'Asignar Roles Al Usuario Seleccionado'
                 },
                 selection: 'selectedSingle',
-                hasPermission: @json(auth()->user()->can('assign-rol'))
+                hasPermission: true
             }],
         },
         selection: {
